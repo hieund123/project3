@@ -5,7 +5,6 @@ class TableTemplate {
     const table = document.getElementById(tableId);
     const headerRow = table.rows[0];
 
-    // Process header row
     for (let i = 0; i < headerRow.cells.length; i++) {
       const cell = headerRow.cells[i];
       cell.innerHTML = this.replaceTemplate(cell.innerHTML, dict);
@@ -25,10 +24,7 @@ class TableTemplate {
   }
 
   static replaceTemplate(template, dict) {
-    return template.replace(
-      /\{\{(\w+)\}\}/g,
-      (match, p1) => dict[p1] || "" 
-    );
+    return template.replace(/\{\{(\w+)\}\}/g, (match, p1) => dict[p1] || "");
   }
 
   static getColumnIndex(headerRow, columnName) {
@@ -37,7 +33,7 @@ class TableTemplate {
         return i;
       }
     }
-    return -1; 
+    return -1;
   }
 }
 
