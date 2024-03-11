@@ -5,7 +5,6 @@ class TableTemplate {
     const table = document.getElementById(tableId);
     const headerRow = table.rows[0];
 
-    // Process header row
     for (let i = 0; i < headerRow.cells.length; i++) {
       const cell = headerRow.cells[i];
       cell.innerHTML = this.replaceTemplate(cell.innerHTML, dict);
